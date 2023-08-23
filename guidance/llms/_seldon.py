@@ -39,8 +39,8 @@ def createChatInputs(messages) -> List[Dict]:
 
 class Seldon(OpenAI):
 
-    def __init__(self, model=None, caching=True, max_retries=5, max_calls_per_min=60, token=None, endpoint=None, temperature=0.0, chat_mode="auto", organization=None, rest_call=False):
-        super().__init__(model, caching=caching, max_retries=max_retries,max_calls_per_min=max_calls_per_min, token=token,endpoint=endpoint, temperature=temperature,chat_mode=chat_mode, organization=organization, rest_call=rest_call)
+    def __init__(self, model=None, caching=True, max_retries=5, max_calls_per_min=60, token=None, endpoint=None, temperature=0.0, chat_mode="auto", organization=None, rest_call=True):
+        super().__init__(model, caching=caching, max_retries=max_retries,max_calls_per_min=max_calls_per_min, token=token, endpoint=endpoint, temperature=temperature,chat_mode=chat_mode, organization=organization, rest_call=rest_call)
         self.caller = self._seldon_call
         self.cache.clear()
 
